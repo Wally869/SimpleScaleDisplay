@@ -1,6 +1,8 @@
 ## SimpleScalesDisplay
 
-Small helper webapp to check notes and alterations belonging to a given scale.  
+Small helper webapp to check notes and alterations belonging to a given scale.
+
+It lives at: https://wally869.github.io/SimpleScalesDisplay/  
 
 
 ## To Do  

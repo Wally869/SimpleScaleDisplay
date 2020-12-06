@@ -97,6 +97,97 @@
         },
     }
 
+    var srcImages2 = {
+        "Ab": {
+            /*
+            "Major": "Ab_Major.png",
+            "Minor": "Ab_Minor.png"
+            */
+            "Major": "G%23_Major.png",
+            "Minor": "G%23_Minor.png"
+        },
+        "A": {
+            "Major": "A_Major.png",
+            "Minor": "A_Minor.png"
+        },
+        "A#": {
+            "Major": "A%23%_Major.png",
+            "Minor": "A%23%_Minor.png"
+        },
+        "Bb": {
+            /*
+            "Major": "Bb_Major.png",
+            "Minor": "Bb_Minor.png"
+            */
+            "Major": "A%23_Major.png",
+            "Minor": "A%23_Minor.png"
+        },
+        "B": {
+            "Major": "B_Major.png",
+            "Minor": "B_Minor.png"
+        },
+        "C": {
+            "Major": "C_Major.png",
+            "Minor": "C_Minor.png"
+        },
+        "C#": {
+            "Major": "C%23_Major.png",
+            "Minor": "C%23_Minor.png"
+        },
+        "Db": {
+            /*
+            "Major": "Db_Major.png",
+            "Minor": "Db_Minor.png"
+            */
+            "Major": "C%23_Major.png",
+            "Minor": "C%23_Minor.png"
+        },
+        "D": {
+            "Major": "D_Major.png",
+            "Minor": "D_Minor.png"
+        },
+        "D#": {
+            "Major": "D%23_Major.png",
+            "Minor": "D%23_Minor.png"
+        },
+        "Eb": {
+            /*
+            "Major": "Eb_Major.png",
+            "Minor": "Eb_Minor.png"
+            */
+            "Major": "D%23_Major.png",
+            "Minor": "D%23_Minor.png"
+        },
+        "E": {
+            "Major": "E_Major.png",
+            "Minor": "E_Minor.png"
+        },
+        "F": {
+            "Major": "F_Major.png",
+            "Minor": "F_Minor.png"
+        },
+        "F#": {
+            "Major": "F%23_Major.png",
+            "Minor": "F%23_Minor.png"
+        },
+        "Gb": {
+            /*
+            "Major": "Gb_Major.png",
+            "Minor": "Gb_Minor.png"
+            */
+            "Major": "F%23_Major.png",
+            "Minor": "F%23_Minor.png"
+        },
+        "G": {
+            "Major": "G_Major.png",
+            "Minor": "G_Minor.png"
+        },
+        "G#": {
+            "Major": "G%23_Major.png",
+            "Minor": "G%23_Minor.png"
+        },
+    }
+
 
 
     function onValuesChanged() {
@@ -111,7 +202,18 @@
     }
 
     function updateDisplay() {
-        document.getElementById("scaleDisplay").src = srcImages[scaleNote][scaleMode]
+        /*
+        var url = srcImages[scaleNote][scaleMode];
+        if (scaleNote.length == 2) {
+            url = "static/" + scaleNote[0] + "%23" + "_" + scaleMode + ".png";
+
+        } else {
+            url = "static/" + scaleNote + "_" + scaleMode + ".png";
+
+        }
+        */
+        var url = "static/" + srcImages2[scaleNote][scaleMode];
+        document.getElementById("scaleDisplay").src = url;
     }
 
     updateDisplay();
