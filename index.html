@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      class="flex flex-col h-full align-center items-center justify-center w-full"
+    >
+      <div class="container mx-auto border-2 border-blue max-w-xl p-4">
+        <div class="flex flex-row justify-around">
+            <div>
+                <select onchange="onValuesChanged()"  id="selectScaleNote" class="border-4">
+                    <option class='option' id='option0'>Ab</option>
+                    <option class='option' id='option1' selected="selected">A</option>
+                    <option class='option' id='option2'>Bb</option>
+                    <option class='option' id='option3'>B</option>
+                    <option class='option' id='option4'>C</option>
+                    <option class='option' id='option5'>C#</option>
+                    <option class='option' id='option6'>Db</option>
+                    <option class='option' id='option7'>D</option>
+                    <option class='option' id='option8'>D#</option>
+                    <option class='option' id='option9'>Eb</option>
+                    <option class='option' id='option10'>E</option>
+                    <option class='option' id='option11'>F</option>
+                    <option class='option' id='option11'>F#</option>
+                    <option class='option' id='option11'>Gb</option>
+                    <option class='option' id='option11'>G</option>
+                    <option class='option' id='option11'>G#</option>
+
+                </select>
+            </div>
+            <div>
+                <select onchange="onValuesChanged()" id="selectScaleMode" class="border-4">
+                    <option class='option' id='option1'>Major</option>
+                    <option class='option' id='option2'>Minor</option>
+                </select>
+            </div>
+        </div>
+        <div class="flex flex-row p-2">
+        </div>
+        <div class="flex flex-row justify-center">
+            <img id="scaleDisplay" src="https://upload.wikimedia.org/score/m/0/m0gpk5fdvyqfrezab6bnab4nz3ni89z/m0gpk5fd.png"/>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+    var scaleNote = "A";
+    var scaleMode = "Major";
+
+
+    var srcImages = {
+        "Ab": {
+            "Major": "",
+            "Minor": ""
+        },
+        "A": {
+            "Major": "https://upload.wikimedia.org/score/m/0/m0gpk5fdvyqfrezab6bnab4nz3ni89z/m0gpk5fd.png",
+            "Minor": ""
+        },
+        "A#": {
+            "Major": "",
+            "Minor": ""
+        },
+        "Bb": {
+            "Major": "",
+            "Minor": ""
+        },
+        "B": {
+            "Major": "",
+            "Minor": ""
+        },
+        "C": {
+            "Major": "",
+            "Minor": ""
+        },
+        "C#": {
+            "Major": "",
+            "Minor": ""
+        },
+        "D": {
+            "Major": "",
+            "Minor": ""
+        },
+        "D#": {
+            "Major": "",
+            "Minor": ""
+        },
+        "E": {
+            "Major": "",
+            "Minor": ""
+        },
+    }
+
+
+
+    function onValuesChanged() {
+        updateVariables();
+        updateDisplay();
+    }
+
+    function updateVariables() {
+        scaleNote = document.getElementById("selectScaleNote").value;
+        scaleMode = document.getElementById("selectScaleMode").value;
+        
+    }
+
+    function updateDisplay() {
+        document.getElementById("scaleDisplay").src = srcImages[scaleNote][scaleMode]
+    }
+
+    updateDisplay();
+
+</script>
+²
